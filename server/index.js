@@ -17,65 +17,51 @@ app.use(cors());
 app.use(express.json());
 app.use(morgan('dev'));
 
-// Serve static files from the React app in production
+// Serve static files from React app in production
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static(path.join(__dirname, '../client/build')));
 }
 
-// Product data is now imported from products.js
-const productsData = productData;
-
 // API Routes
+
 // Get all categories
 app.get('/api/categories', (req, res) => {
-  res.json(productsData.categories);
+  res.json(productData.categories);
 });
 
-// Get featured products (random selection for demo)
+// Get featured products (first 8 products for demo)
 app.get('/api/products/featured', (req, res) => {
-  const allProducts = productsData.products;
-  const shuffled = [...allProducts].sort(() => 0.5 - Math.random());
-  const featured = shuffled.slice(0, 8);
+  const featured = productData.products.slice(0, 8);
   res.json(featured);
 });
 
 // Get products by category
 app.get('/api/products/category/:categoryId', (req, res) => {
   const { categoryId } = req.params;
-  const categoryProducts = productsData.products.filter(product => product.category === categoryId);
-  const categoryName = productsData.categories.find(cat => cat.id === categoryId)?.name || '';
-  
-  res.json({
-    categoryName,
-    products: categoryProducts
-  });
+  const categoryProducts = productData.products.filter(p => p.category === categoryId);
+  const categoryName = productData.categories.find(cat => cat.id === categoryId)?.name || '';
+  res.json({ categoryName, products: categoryProducts });
 });
 
 // Get product by ID
 app.get('/api/products/:id', (req, res) => {
   const { id } = req.params;
-  const product = productsData.products.find(product => product.id === id);
-  
-  if (!product) {
-    return res.status(404).json({ message: 'Product not found' });
-  }
-  
+  const product = productData.products.find(p => p.id === id);
+  if (!product) return res.status(404).json({ message: 'Product not found' });
   res.json(product);
 });
 
-// Serve the React app for any other routes in production
+// Serve React app for any other route in production
 if (process.env.NODE_ENV === 'production') {
   app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, '../client/build/index.html'));
   });
 }
 
-// Start the server
+// Start server
 app.listen(PORT, () => {
   console.log('\n🚀 Elementary E-commerce Server is running!');
-  console.log('📍 Server URL: http://localhost:' + PORT);
+  console.log(`📍 Server URL: http://localhost:${PORT}`);
   console.log('🌐 Client URL: http://localhost:3000');
-  console.log('📱 Open your browser and navigate to: http://localhost:3000');
-  console.log('⚡ API Endpoints available at: http://localhost:' + PORT + '/api');
-  console.log('\n✨ Happy shopping with Elementary!\n');
+  console.log(`⚡ API Endpoints: http://localhost:${PORT}/api`);
 });
