@@ -1,0 +1,27 @@
+.products-page {
+  padding: 2rem 0;
+}
+
+.page-title {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: var(--primary);
+}
+
+.products-count {
+  margin-bottom: 1.5rem;
+  color: var(--dark-gray);
+}
+
+.no-products {
+  text-align: center;
+  padding: 3rem 0;
+  color: var(--medium-gray);
+}
+
+.loading {
+  text-align: center;
+  padding: 3rem 0;
+  color: var(--medium-gray);
+}

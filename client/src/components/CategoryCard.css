@@ -1,0 +1,132 @@
+.category-card {
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: relative;
+}
+
+.category-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.05) 0%, rgba(118, 75, 162, 0.05) 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.category-card:hover::before {
+  opacity: 1;
+}
+
+.category-card a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  padding: 1.5rem;
+}
+
+.category-image {
+  margin-bottom: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 120px;
+}
+
+.image-placeholder {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid rgba(102, 126, 234, 0.1);
+}
+
+.category-icon {
+  font-size: 2rem;
+  opacity: 0.7;
+}
+
+.category-info {
+  text-align: center;
+  position: relative;
+}
+
+.category-info h3 {
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin: 0 0 0.5rem 0;
+  color: #1a1a1a;
+  letter-spacing: 0.5px;
+}
+
+.category-arrow {
+  font-size: 1.5rem;
+  color: #667eea;
+  font-weight: 300;
+  transition: transform 0.3s ease;
+}
+
+.category-card:hover .category-arrow {
+  transform: translateX(5px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .category-card a {
+    padding: 1rem;
+  }
+
+  .category-image {
+    height: 100px;
+    margin-bottom: 1rem;
+  }
+
+  .image-placeholder {
+    width: 60px;
+    height: 60px;
+  }
+
+  .category-icon {
+    font-size: 1.5rem;
+  }
+
+  .category-info h3 {
+    font-size: 1rem;
+  }
+
+  .category-arrow {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .category-card a {
+    padding: 0.8rem;
+  }
+
+  .category-image {
+    height: 80px;
+  }
+
+  .image-placeholder {
+    width: 50px;
+    height: 50px;
+  }
+
+  .category-icon {
+    font-size: 1.2rem;
+  }
+
+  .category-info h3 {
+    font-size: 0.9rem;
+  }
+}
