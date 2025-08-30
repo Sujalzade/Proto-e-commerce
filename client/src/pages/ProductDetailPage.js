@@ -15,7 +15,7 @@ const ProductDetailPage = () => {
 
   useEffect(() => {
     // Fetch product details
-    fetch(`http://localhost:5005/api/products/${id}`)
+    fetch(`/api/products/${id}`)
       .then(res => res.json())
       .then(data => {
         setProduct(data);

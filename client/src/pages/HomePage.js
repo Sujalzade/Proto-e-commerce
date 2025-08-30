@@ -12,14 +12,14 @@ const HomePage = () => {
 
   useEffect(() => {
     // Fetch categories and featured products
-    fetch('http://localhost:5005/api/categories')
+    fetch('/api/categories')
       .then(res => res.json())
       .then(data => {
         setCategories(data);
       })
       .catch(err => console.error('Error fetching categories:', err));
 
-    fetch('http://localhost:5005/api/products/featured')
+    fetch('/api/products/featured')
       .then(res => res.json())
       .then(data => {
         setFeaturedProducts(data);

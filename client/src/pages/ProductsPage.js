@@ -14,7 +14,7 @@ const ProductsPage = () => {
     setLoading(true);
     
     // Fetch products by category
-    fetch(`http://localhost:5005/api/products/category/${category}`)
+    fetch(`/api/products/category/${category}`)
       .then(res => res.json())
       .then(data => {
         setProducts(data.products);
