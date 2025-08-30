@@ -68,7 +68,13 @@ const ProductDetailPage = () => {
       <div className="container">
         <div className="product-detail">
           <div className="product-image-container">
-            <img src={product.image} alt={product.name} className="product-detail-image" />
+            {product.image ? (
+              <img src={product.image} alt={product.name} className="product-detail-image" />
+            ) : (
+              <div className="product-detail-image-placeholder">
+                <span>No Image Available</span>
+              </div>
+            )}
           </div>
           
           <div className="product-info-container">

@@ -35,7 +35,13 @@ const CartPage = () => {
             {cart.map((item, index) => (
               <div key={`${item.id}-${item.size}-${item.color}`} className="cart-item">
                 <div className="cart-item-image">
-                  <img src={item.image} alt={item.name} />
+                  {item.image ? (
+                    <img src={item.image} alt={item.name} />
+                  ) : (
+                    <div className="cart-item-image-placeholder">
+                      <span>No Image</span>
+                    </div>
+                  )}
                 </div>
                 
                 <div className="cart-item-details">

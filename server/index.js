@@ -62,6 +62,10 @@ if (process.env.NODE_ENV === 'production') {
 app.listen(PORT, () => {
   console.log('\n🚀 Elementary E-commerce Server is running!');
   console.log(`📍 Server URL: http://localhost:${PORT}`);
-  console.log('🌐 Client URL: http://localhost:3000');
+  if (process.env.NODE_ENV === 'production') {
+    console.log('🌐 Production mode: Serving React build');
+  } else {
+    console.log('🌐 Client URL: http://localhost:3000');
+  }
   console.log(`⚡ API Endpoints: http://localhost:${PORT}/api`);
 });

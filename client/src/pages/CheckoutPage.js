@@ -201,7 +201,13 @@ const CheckoutPage = () => {
               {cart.map((item) => (
                 <div key={`${item.id}-${item.size}-${item.color}`} className="order-item">
                   <div className="order-item-image">
-                    <img src={item.image} alt={item.name} />
+                    {item.image ? (
+                      <img src={item.image} alt={item.name} />
+                    ) : (
+                      <div className="order-item-image-placeholder">
+                        <span>No Image</span>
+                      </div>
+                    )}
                   </div>
                   <div className="order-item-details">
                     <h4>{item.name}</h4>

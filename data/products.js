@@ -1,73 +1,55 @@
 import { faker } from '@faker-js/faker';
 
-// Helper function to get appropriate image based on category
-const getCategoryImage = (category) => {
-  const imageMap = {
-    'tshirts': () => faker.image.urlLoremFlickr({ category: 'fashion', width: 400, height: 400 }),
-    'shirts': () => faker.image.urlLoremFlickr({ category: 'fashion', width: 400, height: 400 }),
-    'jeans': () => faker.image.urlLoremFlickr({ category: 'jeans', width: 400, height: 400 }),
-    'shorts': () => faker.image.urlLoremFlickr({ category: 'fashion', width: 400, height: 400 }),
-    'jackets': () => faker.image.urlLoremFlickr({ category: 'fashion', width: 400, height: 400 }),
-    'hoodies': () => faker.image.urlLoremFlickr({ category: 'fashion', width: 400, height: 400 }),
-    'shoes': () => faker.image.urlLoremFlickr({ category: 'shoes', width: 400, height: 400 }),
-    'pants': () => faker.image.urlLoremFlickr({ category: 'fashion', width: 400, height: 400 }),
-    'sweaters': () => faker.image.urlLoremFlickr({ category: 'fashion', width: 400, height: 400 }),
-    'accessories': () => faker.image.urlLoremFlickr({ category: 'fashion', width: 400, height: 400 })
-  };
-  
-  return imageMap[category] ? imageMap[category]() : faker.image.urlLoremFlickr({ category: 'fashion', width: 400, height: 400 });
-};
-
 export const categories = [
   {
     "id": "tshirts",
     "name": "T-Shirts",
-    "image": "/images/categories/tshirts.svg"
+    "image": ""
   },
   {
     "id": "shirts",
     "name": "Shirts",
-    "image": "/images/categories/shirts.svg"
+    "image": ""
   },
   {
     "id": "jeans",
     "name": "Jeans",
-    "image": "/images/categories/jeans.svg"
+    "image": ""
   },
   {
     "id": "shorts",
     "name": "Shorts",
-    "image": "/images/categories/shorts.svg"
+    "image": ""
   },
   {
     "id": "jackets",
     "name": "Jackets",
-    "image": "/images/categories/jackets.svg"
+    "image": ""
   },
   {
     "id": "hoodies",
     "name": "Hoodies",
-    "image": "/images/categories/hoodies.svg"
+    "image": ""
   },
   {
     "id": "shoes",
     "name": "Shoes",
-    "image": "/images/categories/shoes.svg"
+    "image": ""
   },
   {
     "id": "pants",
     "name": "Pants",
-    "image": "/images/categories/pants.svg"
+    "image": ""
   },
   {
     "id": "sweaters",
     "name": "Sweaters",
-    "image": "/images/categories/sweaters.svg"
+    "image": ""
   },
   {
     "id": "accessories",
     "name": "Accessories",
-    "image": "/images/categories/accessories.svg"
+    "image": ""
   }
 ];
 
@@ -101,7 +83,7 @@ const generateProductsForCategory = (categoryId, count = 10) => {
       description: faker.commerce.productDescription(),
       sizes: [],
       colors: [],
-      image: getCategoryImage(categoryId),
+      image: "",
       rating,
       reviews
     };
