@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import CategoryCard from '../components/CategoryCard';
 import ProductCard from '../components/ProductCard';
-import '../styles/glass.css';
 import './HomePage.css';
 
 const HomePage = () => {
@@ -58,7 +57,7 @@ const HomePage = () => {
     <div className="home-page">
       {/* Hero Section */}
       <motion.section 
-        className="hero glass"
+        className="hero"
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: "easeOut" }}

@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { CartContext } from '../context/CartContext';
 import './Header.css';
-import '../styles/glass.css';
 
 const Header = () => {
   const { cart } = useContext(CartContext);
@@ -17,7 +16,7 @@ const Header = () => {
 
   return (
     <motion.header 
-      className="header header-glass"
+      className="header"
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
@@ -31,7 +30,7 @@ const Header = () => {
           <Link to="/">
             <div className="logo-container">
               <motion.div 
-                className="logo-mark logo-glass"
+                className="logo-mark"
                 whileHover={{ scale: 1.05, rotate: 2 }}
                 whileTap={{ scale: 0.95 }}
               >

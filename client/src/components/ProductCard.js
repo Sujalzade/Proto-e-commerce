@@ -2,12 +2,11 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import './ProductCard.css';
-import '../styles/glass.css';
 
 const ProductCard = ({ product }) => {
   return (
     <motion.div 
-      className="product-card product-card-glass"
+      className="product-card"
       whileHover={{ 
         y: -8,
         transition: { duration: 0.3, ease: "easeOut" }
