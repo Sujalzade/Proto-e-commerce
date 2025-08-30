@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import CategoryCard from '../components/CategoryCard';
 import ProductCard from '../components/ProductCard';
+import '../styles/glass.css';
 import './HomePage.css';
 
 const HomePage = () => {
@@ -57,7 +58,7 @@ const HomePage = () => {
     <div className="home-page">
       {/* Hero Section */}
       <motion.section 
-        className="hero"
+        className="hero glass"
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
@@ -69,14 +70,14 @@ const HomePage = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.8, ease: "easeOut" }}
             >
-              Minimalist Fashion for the Modern Individual
+              The Le Veneor Clothing
             </motion.h1>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.8, ease: "easeOut" }}
             >
-              Discover our collection of timeless essentials
+              Minimalist Fashion for the Modern Individual
             </motion.p>
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}

@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { CartContext } from '../context/CartContext';
 import './Header.css';
+import '../styles/glass.css';
 
 const Header = () => {
   const { cart } = useContext(CartContext);
@@ -16,10 +17,10 @@ const Header = () => {
 
   return (
     <motion.header 
-      className="header"
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      transition={{ duration: 0.6, ease: "easeOut" }}
+      className="header header-glass"
+      initial={{ y: -100, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
     >
       <div className="container">
         <motion.div 
@@ -28,16 +29,41 @@ const Header = () => {
           whileTap={{ scale: 0.95 }}
         >
           <Link to="/">
-            <h1>Elementary</h1>
-            <span className="tagline">Minimalist Fashion</span>
+            <div className="logo-container">
+              <motion.div 
+                className="logo-mark logo-glass"
+                whileHover={{ scale: 1.05, rotate: 2 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <span className="logo-text">LV</span>
+              </motion.div>
+              <div className="brand-text">
+                <motion.h1 
+                  className="brand-name"
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.2, duration: 0.6 }}
+                >
+                  The Le Veneor
+                </motion.h1>
+                <motion.span 
+                  className="brand-tagline"
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.4, duration: 0.6 }}
+                >
+                  Clothing
+                </motion.span>
+              </div>
+            </div>
           </Link>
         </motion.div>
 
         <nav className={`nav ${isMenuOpen ? 'nav-open' : ''}`}>
           <motion.ul 
             className="nav-list"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3, duration: 0.6 }}
           >
             <motion.li whileHover={{ y: -2 }}>

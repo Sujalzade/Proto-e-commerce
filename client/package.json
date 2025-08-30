@@ -1,8 +1,8 @@
 {
-  "name": "elementary-client",
+  "name": "the-le-veneor-clothing-client",
   "version": "0.1.0",
   "private": true,
-  "homepage": ".",
+  "homepage": "./",
   "dependencies": {
     "@elevenlabs/react": "^0.5.1",
     "animejs": "^4.1.3",

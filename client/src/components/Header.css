@@ -23,22 +23,51 @@
   color: inherit;
 }
 
-.logo h1 {
-  font-size: 2rem;
-  font-weight: 300;
-  margin: 0;
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.logo-mark {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+}
+
+.logo-text {
+  font-size: 1.2rem;
+  font-weight: 700;
   color: #1a1a1a;
   letter-spacing: -0.5px;
 }
 
-.tagline {
+.brand-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.brand-name {
+  font-size: 1.8rem;
+  font-weight: 300;
+  margin: 0;
+  color: #1a1a1a;
+  letter-spacing: -0.5px;
+  line-height: 1.1;
+}
+
+.brand-tagline {
   display: block;
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   color: #666;
   font-weight: 400;
-  margin-top: -0.2rem;
+  margin-top: -0.1rem;
   letter-spacing: 1px;
   text-transform: uppercase;
+  line-height: 1;
 }
 
 .nav {
@@ -209,12 +238,21 @@
     display: block;
   }
 
-  .logo h1 {
-    font-size: 1.5rem;
+  .logo-mark {
+    width: 40px;
+    height: 40px;
   }
 
-  .tagline {
-    font-size: 0.7rem;
+  .logo-text {
+    font-size: 1rem;
+  }
+
+  .brand-name {
+    font-size: 1.4rem;
+  }
+
+  .brand-tagline {
+    font-size: 0.65rem;
   }
 }
 
@@ -223,11 +261,24 @@
     padding: 0 0.5rem;
   }
 
-  .logo h1 {
-    font-size: 1.3rem;
+  .logo-container {
+    gap: 0.75rem;
   }
 
-  .tagline {
+  .logo-mark {
+    width: 36px;
+    height: 36px;
+  }
+
+  .logo-text {
+    font-size: 0.9rem;
+  }
+
+  .brand-name {
+    font-size: 1.2rem;
+  }
+
+  .brand-tagline {
     font-size: 0.6rem;
   }
 }
