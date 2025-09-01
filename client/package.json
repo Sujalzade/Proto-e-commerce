@@ -1,5 +1,6 @@
 {
   "name": "the-le-veneor-clothing-client",
+  "proxy": "http://localhost:5005",
   "version": "0.1.0",
   "private": true,
   "homepage": "./",

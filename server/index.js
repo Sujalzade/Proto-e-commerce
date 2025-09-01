@@ -4,7 +4,8 @@ import cors from 'cors';
 import morgan from 'morgan';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
-import { productData } from '../data/products.js';
+import fs from 'fs';
+const productData = JSON.parse(fs.readFileSync(new URL('../data/products.json', import.meta.url), 'utf-8'));
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
