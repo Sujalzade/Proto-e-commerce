@@ -1,7 +1,7 @@
 {
-  "name": "the-le-veneor-clothing",
+  "name": "le-veneor-clothing",
   "version": "1.0.0",
-  "description": "The Le Veneor Clothing - A minimalist fashion platform",
+  "description": "Le Veneor Clothing - A minimalist fashion platform",
   "main": "server/index.js",
   "type": "module",
   "scripts": {

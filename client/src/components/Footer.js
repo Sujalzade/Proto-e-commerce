@@ -8,7 +8,9 @@ const Footer = () => {
       <div className="container">
         <div className="footer-content">
           <div className="footer-section">
-            <h3>elementary</h3>
+            <div className="footer-logo">
+              <img src="/images/logo.svg" alt="Le Veneor Clothing Logo" className="footer-logo-image" />
+            </div>
             <p>Minimalist fashion for the modern individual.</p>
           </div>
           
@@ -35,14 +37,14 @@ const Footer = () => {
           <div className="footer-section">
             <h4>Contact</h4>
             <ul>
-              <li>Email: hello@elementary.com</li>
+              <li>Email: hello@leveneorclothing.com</li>
               <li>Phone: +91 123 456 7890</li>
             </ul>
           </div>
         </div>
         
         <div className="footer-bottom">
-          <p>&copy; {new Date().getFullYear()} Elementary. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Le Veneor Clothing. All rights reserved.</p>
         </div>
       </div>
     </footer>

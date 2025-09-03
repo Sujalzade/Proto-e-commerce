@@ -61,7 +61,7 @@ if (process.env.NODE_ENV === 'production') {
 
 // Start server
 app.listen(PORT, () => {
-  console.log('\n🚀 The Le Veneor Clothing Server is running!');
+  console.log('\n🚀 Le Veneor Clothing Server is running!');
   console.log(`📍 Server URL: http://localhost:${PORT}`);
   if (process.env.NODE_ENV === 'production') {
     console.log('🌐 Production mode: Serving React build');

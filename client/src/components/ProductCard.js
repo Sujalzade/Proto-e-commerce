@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import 'react-lazy-load-image-component/src/effects/blur.css';
 import './ProductCard.css';
 
 const ProductCard = ({ product }) => {
@@ -16,12 +18,19 @@ const ProductCard = ({ product }) => {
       <Link to={`/product/${product.id}`}>
         <div className="product-image">
           <motion.div
-            className="image-placeholder"
+            className="image-container"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
           >
-            <span className="product-icon">👕</span>
+            <LazyLoadImage
+              src={product.image || `/images/products/${product.category}.svg`}
+              alt={product.name}
+              effect="blur"
+              width="100%"
+              height="100%"
+              placeholderSrc="/images/products/placeholder.svg"
+            />
           </motion.div>
           <motion.div
             className="product-overlay"

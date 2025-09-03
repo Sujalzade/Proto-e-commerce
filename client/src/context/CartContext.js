@@ -17,7 +17,7 @@ export const CartProvider = ({ children }) => {
   useEffect(() => {
     // Load cart from localStorage if available
     try {
-      const savedCart = localStorage.getItem('elementaryCart');
+      const savedCart = localStorage.getItem('leVeneorCart');
       if (savedCart) {
         const parsedCart = JSON.parse(savedCart);
         if (Array.isArray(parsedCart)) {
@@ -33,7 +33,7 @@ export const CartProvider = ({ children }) => {
   useEffect(() => {
     // Save cart to localStorage whenever it changes
     try {
-      localStorage.setItem('elementaryCart', JSON.stringify(cart));
+      localStorage.setItem('leVeneorCart', JSON.stringify(cart));
       
       // Calculate total
       const newTotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);

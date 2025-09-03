@@ -12,10 +12,14 @@
   margin-bottom: 2rem;
 }
 
-.footer-section h3 {
-  font-size: 1.5rem;
+.footer-logo {
   margin-bottom: 1rem;
-  font-weight: 600;
+}
+
+.footer-logo-image {
+  height: 50px;
+  width: auto;
+  filter: brightness(1.2);
 }
 
 .footer-section h4 {

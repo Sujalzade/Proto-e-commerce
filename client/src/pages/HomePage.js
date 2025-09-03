@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import CategoryCard from '../components/CategoryCard';
 import ProductCard from '../components/ProductCard';
+import backgroundImage from '../assets/background.png';
 import './HomePage.css';
 
 const HomePage = () => {
@@ -61,15 +62,18 @@ const HomePage = () => {
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
+        style={{ 
+          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${backgroundImage})` 
+        }}
       >
         <div className="container">
           <div className="hero-content">
             <motion.h1
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.8, ease: "easeOut" }}
             >
-              The Le Veneor Clothing
+              Le Veneor Clothing
             </motion.h1>
             <motion.p
               initial={{ opacity: 0, y: 20 }}

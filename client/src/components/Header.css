@@ -26,59 +26,14 @@
 .logo-container {
   display: flex;
   align-items: center;
-  gap: 1rem;
-}
-
-.logo-mark {
-  width: 48px;
-  height: 48px;
-  display: flex;
-  align-items: center;
   justify-content: center;
-  border-radius: 12px;
-  background: #f8f9fa;
-  border: 2px solid #e9ecef;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.logo-image {
+  height: 60px;
+  width: auto;
   transition: all 0.3s ease;
-}
-
-.logo-mark:hover {
-  background: #e9ecef;
-  border-color: #dee2e6;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  transform: scale(1.05);
-}
-
-.logo-text {
-  font-size: 1.2rem;
-  font-weight: 700;
-  color: #1a1a1a;
-  letter-spacing: -0.5px;
-}
-
-.brand-text {
-  display: flex;
-  flex-direction: column;
-}
-
-.brand-name {
-  font-size: 1.8rem;
-  font-weight: 300;
-  margin: 0;
-  color: #1a1a1a;
-  letter-spacing: -0.5px;
-  line-height: 1.1;
-}
-
-.brand-tagline {
-  display: block;
-  font-size: 0.75rem;
-  color: #666;
-  font-weight: 400;
-  margin-top: -0.1rem;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  line-height: 1;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
 }
 
 .nav {

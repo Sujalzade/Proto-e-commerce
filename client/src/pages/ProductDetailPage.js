@@ -14,6 +14,14 @@ const ProductDetailPage = () => {
   const [addedToCart, setAddedToCart] = useState(false);
 
   useEffect(() => {
+    // Reset state when product ID changes
+    setLoading(true);
+    setProduct(null);
+    setSelectedSize('');
+    setSelectedColor('');
+    setQuantity(1);
+    setAddedToCart(false);
+    
     // Fetch product details
     fetch(`/api/products/${id}`)
       .then(res => res.json())
@@ -69,7 +77,12 @@ const ProductDetailPage = () => {
         <div className="product-detail">
           <div className="product-image-container">
             {product.image ? (
-              <img src={product.image} alt={product.name} className="product-detail-image" />
+              <img 
+                src={product.image} 
+                alt={product.name} 
+                className="product-detail-image" 
+                loading="lazy"
+              />
             ) : (
               <div className="product-detail-image-placeholder">
                 <span>No Image Available</span>
